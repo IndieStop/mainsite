@@ -70,7 +70,7 @@ export default function Home() {
 			</h1>
 			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
 				{rising.map((key, index) => (
-					<div className="space-y-2" id={index}>
+					<div className="space-y-2" key={`rising_${index}`}>
 						<Card>
 							<CardContent>
 								<img
@@ -93,7 +93,7 @@ export default function Home() {
 			</h1>
 			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
 				{discount.map((key, index) => (
-					<div className="space-y-2" id={index}>
+					<div className="space-y-2" key={`dis_${index}`}>
 						<img
 							src={key}
 							className="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
@@ -108,7 +108,7 @@ export default function Home() {
 			</h1>
 			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
 				{recent.map((key, index) => (
-					<div className="space-y-2" id={index}>
+					<div className="space-y-2" key={`rec_${index}`}>
 						<img
 							src={key}
 							className="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
