@@ -9,6 +9,7 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
+import { FiShoppingCart } from "react-icons/fi";
 
 export default function Home() {
 	const rising = [
@@ -71,18 +72,23 @@ export default function Home() {
 			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
 				{rising.map((key, index) => (
 					<div className="space-y-2" key={`rising_${index}`}>
-						<Card>
-							<CardContent>
+						<Card className="p-3">
+							<CardContent className=" space-y-2">
 								<img
 									src={key}
 									className="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
 								/>
-								<h3 className="font-medium text-md">
-									Indie Game
-								</h3>
-								<p className="text-brand-primary font-bold">
-									$1000
-								</p>
+								<span className="flex flex-row justify-between items-center">
+									<span className=" space-y-2">
+										<h3 className="font-extrabold text-md">
+											Indie Game
+										</h3>
+										<p className="text-brand-primary font-bold">
+											$1000
+										</p>
+									</span>
+									<FiShoppingCart className=" font-bold text-2xl" />
+								</span>
 							</CardContent>
 						</Card>
 					</div>
@@ -94,12 +100,25 @@ export default function Home() {
 			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
 				{discount.map((key, index) => (
 					<div className="space-y-2" key={`dis_${index}`}>
-						<img
-							src={key}
-							className="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
-						/>
-						<h3 className="font-medium text-md">Indie Game</h3>
-						<p className="text-brand-primary font-bold">$1000</p>
+						<Card className="p-3">
+							<CardContent className=" space-y-2">
+								<img
+									src={key}
+									className="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
+								/>
+								<span className="flex flex-row justify-between items-center">
+									<span className=" space-y-2">
+										<h3 className="font-extrabold text-md">
+											Indie Game
+										</h3>
+										<p className="text-brand-primary font-bold">
+											$1000
+										</p>
+									</span>
+									<FiShoppingCart className=" font-bold text-2xl" />
+								</span>
+							</CardContent>
+						</Card>
 					</div>
 				))}
 			</div>
@@ -109,12 +128,25 @@ export default function Home() {
 			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
 				{recent.map((key, index) => (
 					<div className="space-y-2" key={`rec_${index}`}>
-						<img
-							src={key}
-							className="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
-						/>
-						<h3 className="font-medium text-md">Indie Game</h3>
-						<p className="text-brand-primary font-bold">$1000</p>
+						<Card className="p-3">
+							<CardContent className=" space-y-2">
+								<img
+									src={key}
+									className="object-cover w-full max-w-92 h-72 rounded-2xl animate-fade-right animate-once"
+								/>
+								<span className="flex flex-row justify-between items-center">
+									<span className=" space-y-2">
+										<h3 className="font-extrabold text-md">
+											Indie Game
+										</h3>
+										<p className="text-brand-primary font-bold">
+											$1000
+										</p>
+									</span>
+									<FiShoppingCart className=" font-bold text-2xl" />
+								</span>
+							</CardContent>
+						</Card>
 					</div>
 				))}
 			</div>
