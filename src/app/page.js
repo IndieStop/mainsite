@@ -10,6 +10,7 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import { FiShoppingCart } from "react-icons/fi";
+import Nav from "@/components/ui/nav";
 
 export default function Home() {
 	const rising = [
@@ -65,6 +66,7 @@ export default function Home() {
 				<CarouselPrevious />
 				<CarouselNext />
 			</Carousel>{" "}
+			<Nav />
 			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
 				{" "}
 				Rising Games
