@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function LoginPage() {
 	return (
-		<section className="flex flex-col justify-center items-end bg-[url('/bg.png')]  overflow-hidden sm:mx-auto w-full m-auto max-h-max h-screen bg-center bg-no-repeat bg-cover">
+		<section className="flex flex-col justify-center items-end bg-[url('/bg.png')]  overflow-hidden sm:mx-auto w-full m-auto max-h-max h-screen bg-center bg-no-repeat bg-cover ">
 			<form className="w-full px-[10vw]  md:w-[55vw] h-screen bg-background space-y-6 rounded-bl-3xl rounded-tl-3xl flex flex-col justify-center">
 				<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
 					Indie<span className="text-primary">Stop</span>

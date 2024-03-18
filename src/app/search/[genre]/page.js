@@ -1,38 +1,26 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import supabase from "@/lib/supabase/supabase";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
+import { Card, CardContent } from "@/components/ui/card";
 import { FiShoppingCart } from "react-icons/fi";
 
-export default function Search({ searchParams }) {
+export default function Genre({ params }) {
 	const [games, setPosts] = useState([]);
-
+	console.log(params);
 	useEffect(() => {
 		async function fetchData() {
-			try {
-				if (searchParams.q === undefined) {
-					const { data } = await supabase.from("Game").select("*");
-					setPosts(data || []);
-				} else {
-					const { data } = await supabase
-						.from("Game")
-						.select()
-						.ilike("Name", searchParams.q);
-					setPosts(data || []);
-				}
-			} catch (error) {
-				console.error("Error fetching data:", error.message);
-			}
+			let { data, error } = await supabase
+				.from("Game")
+				.select("*")
+				.ilike("Genre", params.genre);
+			console.log(data, error);
+			setPosts(data);
 		}
 		fetchData();
-	}, [searchParams.q]);
-
+	}, []);
 	return (
-		<>
-
+		<div>
 			<div className="grid grid-flow-row gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 px-4">
 				{games.map((game) => (
 					<Card
@@ -69,6 +57,6 @@ export default function Search({ searchParams }) {
 					</Card>
 				))}
 			</div>
-		</>
+		</div>
 	);
 }
