@@ -3,15 +3,17 @@ import React, { useState, useEffect } from "react";
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState([]);
+  let storedItems;
 
   useEffect(() => {
-    const storedItems = localStorage.getItem("cartItems");
+    storedItems = localStorage.getItem("cart");
     if (storedItems) {
       try {
         setCartItems(JSON.parse(storedItems));
       } catch (error) {
         console.error("Error parsing cart items from localStorage", error);
       }
+      console.log(storedItems);
     }
   }, []);
 
@@ -54,16 +56,16 @@ const Checkout = () => {
               />
               <div className="flex flex-col justify-between p-4 leading-normal">
                 <h5 className="mb-2 text-xl font-bold tracking-tight">
-                  {item.name}
+                  {item.Name}
                 </h5>
-                <p className="mb-3 font-normal text-gray-400">₹{item.price}</p>
+                <p className="mb-3 font-normal text-gray-400">₹{item.Price}</p>
               </div>
               <div>
                 <input
                   type="number"
                   placeholder="1"
                   className="bg-transparent text-center ml-4 border-2 max-w-24 mx-8 p-4 border-white"
-                  value={item.quantity}
+                  value={item.Quantity}
                   onChange={(e) =>
                     updateQuantity(item.id, parseInt(e.target.value))
                   }
