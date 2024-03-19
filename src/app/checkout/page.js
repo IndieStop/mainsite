@@ -23,13 +23,13 @@ const Checkout = () => {
     } else {
       setCartItems(
         cartItems.map((item) =>
-          item.id === itemId ? { ...item, quantity: newQuantity } : item
+          item.id === itemId ? { ...item, Quantity: newQuantity } : item
         )
       );
     }
   };
 
-  const calculateSubtotal = (item) => item.price * item.quantity;
+  const calculateSubtotal = (item) => item.Price * item.Quantity;
 
   const calculateTotal = () => {
     let total = cartItems.reduce(
@@ -51,7 +51,7 @@ const Checkout = () => {
             >
               <img
                 className="object-cover  rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-                src={item.image}
+                src={item.Thumbnail}
                 alt=""
               />
               <div className="flex flex-col justify-between p-4 leading-normal">

@@ -55,6 +55,7 @@ export default function Product({ params }) {
       description: `${quantity} Quantity of ${game.Name} Has Been Added to Cart`,
     });
 
+    game["Quantity"]=quantity;
     setCart((cart) => [...cart, game]);
 
     const stripe = await loadStripe(

@@ -22,7 +22,7 @@ export default function Product({ params }) {
 
   const [cart, setCart] = useState(() => {
     if (window !== "undefined") {
-      return JSON.parse(localStorage.getItem("cart") || []);
+      return JSON.parse(localStorage.getItem("cart"))|| [];
     }
   });
 
@@ -55,6 +55,7 @@ export default function Product({ params }) {
       description: `${quantity} Quantity of ${game.Name} Has Been Added to Cart`,
     });
 
+    game["Quantity"] = quantity;
     setCart((cart) => [...cart, game]);
 
     const stripe = await loadStripe(
