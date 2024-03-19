@@ -24,6 +24,7 @@ export default function LoginPage() {
 					id="password"
 					name="password"
 					placeholder="Password"
+					pattern=".{8,16}"
 					required
 				/>
 				<span className="flex flex-col justify-between  w-full gap-4 *:w-full">

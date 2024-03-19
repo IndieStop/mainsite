@@ -14,7 +14,6 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import { FiShoppingCart } from "react-icons/fi";
-import Nav from "@/components/ui/nav";
 
 export default function Home() {
 	const [games, setPosts] = useState([]);
@@ -67,16 +66,15 @@ export default function Home() {
 				<CarouselPrevious />
 				<CarouselNext />
 			</Carousel>{" "}
-			<Nav />
 			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
 				{" "}
 				Rising Games
 			</h1>
-			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full">
 				{rising.map((key, index) => (
 					<Link
 						href={`product/${key.uuid}`}
-						className="space-y-2"
+						className="space-y-2 group border-2 border-background hover:border-primary rounded-xl "
 						key={`rising_${index}`}
 					>
 						<Card className="p-3">
@@ -103,7 +101,7 @@ export default function Home() {
 			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
 				Discounted Games
 			</h1>
-			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full">
 				{discount.map((key, index) => (
 					<Link
 						href={`product/${key.uuid}`}
@@ -134,7 +132,7 @@ export default function Home() {
 			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
 				Recommended By Us
 			</h1>
-			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full">
 				{recent.map((key, index) => (
 					<Link
 						href={`product/${key.uuid}`}

@@ -31,54 +31,62 @@ export default function Search({ children }) {
 							</li>
 							<li className="mt-2 flex text-white">
 								<a
-									href="/search/test"
+									href="/search/action"
 									className={clsx(
 										"w-full text-sm hover:text-neutral-400",
 										{
 											"underline underline-offset-4":
-												pathname === "/search/test",
+												pathname === "/search/action",
 										}
 									)}
 								>
-									Test
+									Action
+								</a>
+							</li>
+
+							<li className="mt-2 flex text-white">
+								<a
+									href="/search/rpg"
+									className={clsx(
+										"w-full text-sm hover:text-neutral-400",
+										{
+											"underline underline-offset-4":
+												pathname === "/search/rpg",
+										}
+									)}
+								>
+									RPG
 								</a>
 							</li>
 							<li className="mt-2 flex text-white">
 								<a
-									href="/search/Nahi"
+									href="/search/strategy"
 									className={clsx(
 										"w-full text-sm hover:text-neutral-400",
 										{
 											"underline underline-offset-4":
-												pathname === "/search/Nahi",
+												pathname === "/search/strategy",
 										}
 									)}
 								>
-									Nahi
+									Strategy
 								</a>
 							</li>
-						</ul>
-						<ul className="md:hidden">
-							<div className="relative">
-								<div className="flex w-full items-center justify-between rounded border border-black/30 px-4 py-2 text-sm dark:border-white/30">
-									<div>All</div>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										strokeWidth="1.5"
-										stroke="currentColor"
-										aria-hidden="true"
-										className="h-4"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-										></path>
-									</svg>
-								</div>
-							</div>
+							<li className="mt-2 flex text-white">
+								<a
+									href="/search/simulation"
+									className={clsx(
+										"w-full text-sm hover:text-neutral-400",
+										{
+											"underline underline-offset-4":
+												pathname ===
+												"/search/simulation",
+										}
+									)}
+								>
+									Simulation
+								</a>
+							</li>
 						</ul>
 					</nav>
 				</div>

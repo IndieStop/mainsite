@@ -22,39 +22,31 @@ export default function Genre({ params }) {
 	return (
 		<div>
 			<div className="grid grid-flow-row gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 px-4">
-				{games.map((game) => (
-					<Card
-						key={game.uuid}
-						className="aspect-square transition-opacity lg:w-[50vw] xl:w-full group flex h-full w-full items-center justify-center overflow-hidden border border-background  hover:border-primary rounded-xl"
+				{games.map((key, index) => (
+					<Link
+						href={`/product/${key.uuid}`}
+						className="space-y-2 group border-2 border-background hover:border-primary rounded-xl "
+						key={`rec_${index}`}
 					>
-						<Link
-							className="relative inline-block h-full w-full"
-							href={`/product/${game.uuid}`}
-						>
-							<CardContent>
-								{" "}
+						<Card className="p-3">
+							<CardContent className=" space-y-2">
 								<img
-									src={game.Thumbnail}
-									alt={game.Name}
-									className=" rounded-xl transition duration-300 ease-in-out group-hover:scale-105"
+									src={key.Thumbnail}
+									className=" object-cover w-full max-w-92 h-72 rounded-2xl transition duration-300 ease-in-out group-hover:scale-105"
 								/>
-								<span className="flex flex-row justify-between items-center p-3">
+								<span className="flex flex-row justify-between items-center">
 									<span className=" space-y-2">
-										<h3 className="font-extrabold text-md">
-											{game.Name}
+										<h3 className="font-extrabold text-md md:text-xl">
+											{key.Name}
 										</h3>
-										<p className=" max-w-[40ch] overflow-hidden whitespace-nowrap text-ellipsis">
-											{game.Description}
-										</p>
 										<p className="text-brand-primary font-bold">
-											$1000
+											₹ {key.Price}
 										</p>
 									</span>
-									<FiShoppingCart className=" font-bold text-2xl" />
 								</span>
 							</CardContent>
-						</Link>
-					</Card>
+						</Card>
+					</Link>
 				))}
 			</div>
 		</div>
